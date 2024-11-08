@@ -1,1 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int N;
+	int num[5];
+	cin>>N;
+	int even[5];
+	int odd[5];
+	int positive[5];
+	int negative[5];
+	int p=0, q=0, r=0, s=0;
+	
+	for(int i=0; i<=5; i++)
+	{
+	    cin>>num[i];
+	}
+
+    for(int i=0; i<=5; i++)
+    {
+        if(num[i]%2==0 && num[i]!=0)
+        {
+            even[p]=num[i];
+            p++;
+        }
+        else
+        {
+            odd[q]=num[i];
+            q++;
+        }
+        if(num[i]%2>0)
+        {
+            positive[r]=num[i];
+            r++;
+        }
+        else
+        {
+            negative[s]=num[i];
+            s++;
+        }
+    }
+        cout<<"Even: "<<p<<endl;
+
+        cout<<"Odd: "<<q<<endl;
+
+        cout<<"Positive: "<<r<<endl;
+
+        cout<<"Negative: "<<s<<endl;
+    
+    return 0;
+}
+
 
