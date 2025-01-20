@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+	
+	int N, q;
+	cin>>N;
+	if(N%5>2)
+	    cout<<N+(5-N%5);
+	else
+	    cout<<N-(N%5);
+
+}
+
+
+//https://atcoder.jp/contests/abc305/tasks/abc305_a
