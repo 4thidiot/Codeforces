@@ -6,60 +6,33 @@ int main() {
 	int t;
 	cin>>t;
 	
-	for(int h=0; h<t; h++)
+	while(t--)
 	{
-	    int q=0, r=0;
 	    int n;
-	    
 	    cin>>n;
-	    int A[n/2], B[n/2], C[n];
 	    
-	    for(int j=0; j<n; j++)
+	    int arr[n+1];
+	    int count[101];   //since from 1 to 100 inclusive
+	    for(int i=0; i<101; i++)
+	        count[i]=0;    //initialising all the elements of the array to 0
+	    
+	    for(int i=1; i<=n; i++)
 	    {
-	        cin>>C[j];
+	        cin>>arr[i];
+	        count[arr[i]]++; //inputting elements and also increasing the count array
 	    }
 	    
-	    sort(C, C+n);
-	    if(n%2==0)
-	    {
-	        for(int i=0; i<n; i++)
-	        {
-	            if(i%2==0)
-	            {
-	                A[q]=C[i];
-	                q++;
-	            }     
-	            else
-	            {
-	                B[r]=C[i];
-	                r++;
-	            }
-	        }
+	    int mexa=0;
+	    while(count[mexa] >= 1)
+	        mexa++;             //mex a mein whi jaayenge jinki freq 1 ya usse zyaada hai
+	    int mexb=0;
+	    while(count[mexb] >= 2)
+	        mexb++;             //mex a mein whi jaayenge jinki freq 2 ya usse zyaada hai     
+	       
+	   cout<< mexa + mexb << endl;     
 	        
-	        int l=0, m=0;
-	        for(int i=0; i<n; i++)
-	        {
-	            if(A[i]==l)
-	                l++;
-	            if(B[i]==m)
-	                m++;
-	        }
-	        
-	        cout<<l+m<<endl;
-	    }
-	    
-	    else
-	    {
-	        int k=0;
-	        for(int i=0; i<n; i++)
-	        {
-	            if(C[i]==k)
-	                k++;
-	        }
-	        
-	        cout<<k<<endl;
-	    }
-	    
 	}
+	
+	return 0;
 
 }
