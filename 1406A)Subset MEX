@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int t;
+	cin>>t;
+	
+	for(int h=0; h<t; h++)
+	{
+	    int q=0, r=0;
+	    int n;
+	    
+	    cin>>n;
+	    int A[n/2], B[n/2], C[n];
+	    
+	    for(int j=0; j<n; j++)
+	    {
+	        cin>>C[j];
+	    }
+	    
+	    sort(C, C+n);
+	    if(n%2==0)
+	    {
+	        for(int i=0; i<n; i++)
+	        {
+	            if(i%2==0)
+	            {
+	                A[q]=C[i];
+	                q++;
+	            }     
+	            else
+	            {
+	                B[r]=C[i];
+	                r++;
+	            }
+	        }
+	        
+	        int l=0, m=0;
+	        for(int i=0; i<n; i++)
+	        {
+	            if(A[i]==l)
+	                l++;
+	            if(B[i]==m)
+	                m++;
+	        }
+	        
+	        cout<<l+m<<endl;
+	    }
+	    
+	    else
+	    {
+	        int k=0;
+	        for(int i=0; i<n; i++)
+	        {
+	            if(C[i]==k)
+	                k++;
+	        }
+	        
+	        cout<<k<<endl;
+	    }
+	    
+	}
+
+}
