@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+void solve()
+{
+    long long x;    
+    cin>>x; 
+    int flag=1;
+    
+    while(x>=10)    //by the end of this loop x will be a single digit number taaki first digit alag se check kar paaye while loop is only for last and middle digits!
+    {
+        int digit = x%10;
+        if (flag==1)      //since last digit to ek baar hi check karenge tabhi                 flag=0 kardenge here
+        {
+            flag=0;
+            if(digit>8)
+            {
+                cout<<"NO"<<endl;
+                return;
+            }    
+        }
+        else if(digit==0)         //idhar tab hi aaye jab flag=0 therefore we                         are in the middle digits
+        {
+            cout<<"NO"<<endl;
+            return;
+        }
+        x/=10;  //last digit is removed
+    }
+    
+    if(x==1)                       //for first digit
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
+}
+
+int main() {
+	
+	int t;
+	cin>>t;
+	
+	while(t--)
+	{
+	    solve();
+	}
+
+
+    return 0;
+}
