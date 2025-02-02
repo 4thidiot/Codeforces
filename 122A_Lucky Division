@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isLucky(int h)
+{
+    while(h>0)
+    {
+        if(h%10!=7 && h%10!=4)
+            return false;
+        h/=10;    
+    }
+    return true;
+}
+
+
+int main() {
+	
+	int n; 
+	cin>>n;
+	
+	bool ans=false;
+
+	for(int i=1; i<=n; i++)
+	{
+	    if(n%i==0 && isLucky(i))
+	        ans=true;
+	}
+	
+	if(ans)
+	    cout<<"YES";
+	else
+	    cout<<"NO";
+    
+    return 0;
+}
