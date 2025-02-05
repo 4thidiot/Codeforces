@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i=0; i<n; i++)
+            cin>>arr[i];
+        
+        // sort(arr, arr+n);   not needed now since set use kar rhe hai
+        
+        set <int> count;
+        for(int i=0; i<n; i++)   //iterate seedha warna faltu mein longer and                            tle 
+        {
+            while(arr[i]%2==0)
+            {
+                 count.insert(arr[i]);
+                 arr[i]=arr[i]/2;    //in set each element has to be unique                      ...therefore no need to wrry
+              
+            }    
+        }
+        cout<<count.size()<<endl;  
+    }
+
+}
