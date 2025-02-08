@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int a, b, k;
+	cin>>a>>b>>k;
+	int commondivisors[100], j=0;
+	
+	if(a>b)
+	{
+	    for(int i=1; i<=b; i++)
+	    {
+	        if(b%i==0 && a%i==0)
+	        {
+	            commondivisors[j]=i;
+	            j++;
+	        }
+	    }
+	}
+	else
+	{
+	    for(int i=1; i<=a; i++)
+	    {
+	        if(b%i==0 && a%i==0)
+	        {
+	            commondivisors[j]=i;
+	            j++;
+	        }
+	    }
+	}
+	
+	
+	cout<<commondivisors[j-k];  //j since array is big to end mein to garbage values hongi to sort karke kuch hoga nhi usse better use vectors then
+
+}
