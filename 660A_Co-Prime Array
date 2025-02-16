@@ -19,7 +19,7 @@ int main()
 	    cin>>v[i];
 	
 	int count=0;    
-	for(int i=0; i<n-1; i++)
+	for(int i=0; i<n-1+count; i++)  //vector ka bhi to size bad rha hai we need to take care of that too!
 	{
 	    if(gcd(v[i], v[i+1])!=1)    
 	    {
