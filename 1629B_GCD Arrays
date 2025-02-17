@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve()
+{
+    int l, r, k;
+    cin>>l>>r>>k;
+    
+    int total=r-l+1;
+    
+    if(l==r)
+    {
+        if(l==1)
+            cout<<"NO"<<endl;
+        else
+            cout<<"YES"<<endl;
+        return;    
+    }
+    
+    int ans=0;
+    if(total%2==0)
+        ans=total/2;
+    else
+    {
+        if(l%2==1 || r%2==1)
+            ans=total/2 + 1;
+        else
+            ans=total/2;
+    }
+    
+    if(k>=ans)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
+        
+}
+
+
+
+
+int main() 
+{
+	int t;
+	cin>>t;
+	while(t--)
+	    solve();
+	    
+	return 0;    
+}
