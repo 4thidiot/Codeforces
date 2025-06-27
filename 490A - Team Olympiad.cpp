@@ -1,47 +1,32 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main()
+
+int main() 
 {
-        int i,j,k,count;
-        int n,t;
-        queue<int> one;
-        queue<int> two;
-        queue<int> three;
-
-        cin>>n;
-        for(i=1;i<=n;i++)
-        {
-            cin>>k;
-
-            if(k==1)
-                one.push(i);
-
-            else if(k==2)
-                two.push(i);
-
-            else if(k==3)
-                three.push(i);
-        }
-
-        int min=100000;
-        if(min>one.size())
-            min=one.size();
-
-        if(min>two.size())
-            min=two.size();
-
-        if(min>three.size())
-            min=three.size();
-
-        cout<<min<<endl;
-        for(i=1;i<=min;i++)
-        {
-            cout<<one.front()<<" "<<two.front()<<" "<<three.front()<<endl;
-            one.pop();
-            two.pop();
-            three.pop();
-        }
-
-
-        return 0;
+	int n;
+	cin>>n;
+	vector <int> v(n);
+	
+	for(auto &it : v)
+	    cin>>it;
+    
+    vector <int> code, math, pe;
+    
+    for(int i=0; i<n; i++)
+    {
+        if(v[i]==1)
+            code.push_back(i);
+        else if(v[i]==2)
+            math.push_back(i);
+        else
+            pe.push_back(i);
+    }
+    
+    int tsize = min(min(code.size(), math.size()), pe.size()); 
+    cout<<tsize<<endl;
+    
+    for(int i=0; i<tsize; i++)
+        cout<<code[i]+1<<" "<<math[i]+1<<" "<<pe[i]+1<<endl;
+        
+    return 0;    
 }
